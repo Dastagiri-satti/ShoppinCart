@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+
+
+
+	<bean id="myEngine" class="xml_based_Configuration.Engine">
+		<property name="ModelNo" value="tesla234"></property>
+	</bean>
+	
+	
+	<bean id="myCar" class="xml_based_Configuration.Car">
+	<property name="brand" value="xuv100"></property>
+	<property name="price" value="234.50"></property>
+	<property name="e" ref="myEngine"></property>
+
+	</bean>
+
+
+	<bean id="mySim" class="xml_based_Configuration.Sim">
+	<constructor-arg name="type" value="prepaid"></constructor-arg>
+	<constructor-arg name="name" value="Jio"></constructor-arg>
+	
+	</bean>
+	
+	<bean id="myMobile" class="xml_based_Configuration.Mobile">
+	<constructor-arg name="brand" value="Samsung"></constructor-arg>
+	<constructor-arg name="price" value="345000"></constructor-arg>
+	<constructor-arg name="s" ref="mySim"></constructor-arg>
+	
+	</bean>
+	
+
+
+
+</beans>
